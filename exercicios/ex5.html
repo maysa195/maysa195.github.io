@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex5</title>
+  </head>
+  <body>
+    <script>
+      var usuarios = [
+        {
+          nome: "Diego",
+          habilidades: ["Javascript", "React Js", "React Native"],
+        },
+        {
+          nome: "Gabriel",
+          habilidades: ["Vue Js", "RoR", "Elixir"],
+        },
+      ];
+
+      function exibir(vetor) {
+        for (let prop in vetor) {
+          console.log(vetor[prop].nome);
+          console.log(vetor[prop].habilidades);
+        }
+      }
+      exibir(usuarios);
+    </script>
+  </body>
+</html>
