@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style></style>
+    <title>Ex2</title>
+  </head>
+  <body>
+    <input type="text" id="x" />
+    <input type="text" id="y" />
+    <button onclick="pares()">Go!!</button>
+    <p id="pares"></p>
+    <script>
+      function pares() {
+        var x = document.getElementById("x").value;
+        var y = document.getElementById("y").value;
+        console.log(x);
+        for (x; x <= y; x++) {
+          if (x % 2 == 0) {
+            document.getElementById("pares").innerHTML += x + "<br>";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

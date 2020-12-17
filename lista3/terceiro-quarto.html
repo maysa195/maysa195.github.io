@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefa 03, 04</title>
+    <script>
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        
+        function adicionar() {
+            let newNome = document.getElementById("newNome").value;
+            nomes.push(newNome);
+            let itens = document.querySelectorAll(".remover");
+           for(let x=0; x<=itens.length-1; x++){
+               itens[x].remove();
+           }
+           
+           let input = document.getElementById("newNome").value="";
+            preencher();
+        }
+
+        function preencher(){
+            let ul = document.getElementById("list");
+            for(let x=0; x<=nomes.length-1; x++){
+                let nome = document.createTextNode(nomes[x]);
+                let li = document.createElement("li");
+                li.classList.add("remover");
+                li.appendChild(nome);
+                ul.appendChild(li)
+            }
+        }
+    </script>
+</head>
+<body onload="preencher()">
+    <ul id="list">
+
+    </ul>
+    <label for="newNome">Nome: </label>
+    <input type="text" id="newNome">
+    <button onclick="adicionar()">Adicionar nome</button>
+
+</body>
+</html>
