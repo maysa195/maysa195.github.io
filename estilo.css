@@ -1,3 +1,7 @@
+#acervo img {
+  width: 15px;
+  height: 15px;
+}
 * {
   padding: 0;
   margin: 0;
@@ -129,40 +133,52 @@ main {
 
   background: #fff;
 }
-#l1
-{
-    float: left;
-    width: 60%;
-    height: 90%;
-    padding: 0% 0% 0% 10%;
+#l1 {
+  float: left;
+  width: 60%;
+  height: 90%;
+  padding: 0% 0% 0% 10%;
 }
 
-#l2
-{
-    float: left;
-    width: 20%;
-    height: 50%;
+#l2 {
+  float: left;
+  width: 20%;
+  height: 50%;
 }
 
-#l3{
-	float: left;
-    width: 20%;
-    height: 50%;
+#l3 {
+  float: left;
+  width: 20%;
+  height: 50%;
 }
 
-.nome{
-	font-family: impact;
-	text-decoration: none;
-
+.nome {
+  font-family: impact;
+  text-decoration: none;
 }
 
-#teste{
-color: #800000;
+#teste {
+  color: #800000;
 }
-.nome{
-	font-family: impact;
-	text-decoration: none;
-
+.nome {
+  font-family: impact;
+  text-decoration: none;
 }
 
+td {
+  transition: 0.5s;
 
+  padding-left: 30px;
+  height: 0px;
+
+  border: 1px solid #000;
+}
+
+th {
+  padding-left: 30px;
+}
+
+td img {
+  height: 10px;
+  width: 10px;
+}
