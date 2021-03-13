@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../estilo.css" />
+
+    <title>Programação cliente web e Química</title>
+    <script> 
+   function h2() 
+  {
+      var rh2 = document.getElementById("molech2").value;// recebo litros de h2 do cliente
+      rh2= parseFloat(rh2);
+      var moleh2o = 12.0; // quantidade de moleculas de h2o
+      var mo = rh2 * moleh2o;
+      var moresult= mo/ 44.8;
+
+    var resultado = "  44,8L  de H2 -> 12 x10^23 de H2O <br>" + rh2 + "L de H2 -> X moléculas de H2O <br> <br>" + rh2 + " * " + moleh2o +"x10^23 de H2O = x L de H2 <br>" + mo +"x10^23 / 44.8 de H2<br>" + "X moléculas de h2o = " + moresult  +"x10^23"; 
+	 document.getElementById("equacao").innerHTML = resultado ;
+      
+  }
+    
+  function o2() 
+  {
+      var ro2 = document.getElementById("moleco2").value;
+      ro2= parseFloat(ro2);
+      var molech2o = 6.0; // quantidade de moleculas de h2o
+      var moc = ro2 * molech2o;
+      var moleresult= moc / 22.4;
+
+    var result = "  22.4L  de O2 -> 12 x10^23 de H2O <br>" + ro2 + "L de O2 -> X moléculas de H2O <br> <br>" + ro2 + " * " + molech2o +"x10^23 de H2O = x L de H2 <br>" + moc +"x10^23 / 22.4L de H2<br>" + "X moléculas de h2o = " + moleresult  +"x10^23"; 
+	 document.getElementById("equacao2").innerHTML = result ;
+  }
+
+   </script>
+  </head>
+  <body>
+    <header>
+      <p>Maria Clara Monteiro e Maysa Aquino</p>
+      <a href="index.html"
+        >Home</a
+      >
+  </header>
+
+  <div id="page-landing">
+    <div id="container">
+      <h1>Simulação 2:</h1>
+      <div id="materias">
+        <br>
+        <h3 >Insira a quantidade de litros de H2 e exibiremos a quantidade em moléculas de H2O. </h3>
+    <br>
+    <input type="number" name="valor" id="molech2">
+	<button onclick ="h2(); ">  executar</button>
+	<p id="equacao"></p>
+    
+    
+    
+    <h3 >Insira a quantidade de litros de O2 e exibiremos a quantidade em moléculas de H2O.</h3>
+    <br>
+	<input type="number" name="valor" id="moleco2">
+	<button onclick="o2();">executar</button>
+	<p id="equacao2"></p>
+
+
+      </div> </div> </div> 
+ 
+
+
+
+            </body>
+  
+<footer>
+    <a href="index.html" class="volt">Voltar</a>
+</footer>
+</html>

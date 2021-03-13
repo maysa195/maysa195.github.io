@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../estilo.css" />
+
+    <title>Programação cliente web e Química</title>
+<script> 
+$(function(){
+    
+    $("#texto").keyup(function(){
+
+        // para visualizar a senha //
+        $("#mostrar").mousedown(function() {
+        $("#texto").attr("type", "text");
+        });
+
+        $("#mostrar").mouseup(function() {
+        $("#texto").attr("type", "password");
+        });
+
+        // para ver se eh fraca, media ou forte //
+
+        const letras_minusculas = /[a-z]/;
+        const letras_maiusculas = /[A-Z]/;
+        const carac_especiais = /[@#!$%&*()-+.,=]/;
+        const numeros = /[1-9]/;
+        
+    
+        if(letras_minusculas.test($("#texto").val()) || letras_maiusculas.test($("#texto").val()))
+        {
+            $("#resultado").text("Senha fraca").css({"color":"red","font-family":"impact","font-size": "25px"});
+        }
+        if(letras_minusculas.test($("#texto").val()) && letras_maiusculas.test($("#texto").val()) && numeros.test($("#texto").val()))
+        {
+            $("#resultado").html("Senha média").css({"color":"orange","font-family":"impact","font-size": "25px"});
+        }
+        if(letras_minusculas.test($("#texto").val()) && letras_maiusculas.test($("#texto").val()) && numeros.test($("#texto").val()) && carac_especiais.test($("#texto").val()))
+        {
+            $("#resultado").html("Senha forte").css({"color":"green","font-family":"impact","font-size": "25px"});
+        }
+        if($("#texto").val() == '')
+        {
+            $("#resultado").html("");
+        }
+    })
+
+   
+});
+</script>
+  </head>
+  <body>
+<section>
+    <div id="page-landing">
+        <div id="container">
+          <h1>Verificação de senha </h1>
+          <div id="materias">
+            <br>
+            <h3 >- fraca (em vermelho) se só possuir letras minúsculas ou maiúsculas <br>
+                - moderada (em laranja) se possuir letras minúsculas e maiúsculas e números <br>
+                - forte (em verde) se possuir letras minúsculas e maiúsculas, números e caracteres especiais (@, #, !, $, %, &, *, (, ), -, +, ., =)</h3>
+	 </p><br>
+	<div id="tarefas2">
+			<input id="texto" type="password" maxlength="8"  placeholder="Digite uma senha:"><br><br>
+			<p id="resultado">
+			</p>
+			<br>
+			<button id="mostrar" >Clique e segure para visualizar sua senha</button>
+
+
+	</div>
+
+</section>
+  </body>
