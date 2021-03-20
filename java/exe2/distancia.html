@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../estilo.css" />
+
+    <title>Programação cliente web e Química</title>
+<script> 
+$(function(){
+
+    $("#botaooo").click(function(){
+        let data1 = $("#data1").val(); 
+        let data2 = $("#data2").val(); 
+
+        let ano1 = data1.substr(0,4);
+        let mes1 = data1.substr(5,2);
+        let dia1 = data1.substr(8,2);
+
+        let ano2 = data2.substr(0,4);
+        let mes2 = data2.substr(5,2);
+        let dia2 = data2.substr(8,2);
+
+        let data_qualquer1 = new Date(ano1,mes1 - 1,dia1);
+        let data_qualquer2 = new Date(ano2,mes2 - 1,dia2);
+        
+        let d1 = data_qualquer1.getTime();
+        let d2 = data_qualquer2.getTime(); 
+
+        const calculo_data = Math.abs(d1- d2);
+        let calculo_semana = (1000 * 60 * 60 * 24 * 7);
+        const days = Math.ceil(calculo_data/calculo_semana);
+        $("#resultado").text("Passaram(ou) " + days + " semana(s) entre essas duas datas.");
+    })
+
+    $("#limpar").click(function(){
+        $("#data1").val("");
+        $("#data2").val("");
+        $("#resultado").text("");
+    })
+
+});
+</script>
+  </head>
+  <body>
+    <section>
+        <div id="page-landing">
+            <div id="container">
+              <h1>Distância entre duas semanas </h1>
+              <div id="materias">
+                <br>
+                <h3 >Programa que lê duas datas e indica em semanas a distância entre elas. Por exemplo: 02/05/2017 e 02/07/2017 resultado = 8 semanas.</h3>
+            <br>
+        <div id="tarefas2"> <br>
+                <input id="data1" type="date">
+                <input id="data2" type="date">
+                <button id="botaooo">Executar</button> 
+                <button id="limpar" class="btn">Limpar</button><br/><br/>
+                <p id="resultado" style="font-size: 20px;">
+    
+                </p>
+        </div>
+    </section>
+    </body>
+    </html>

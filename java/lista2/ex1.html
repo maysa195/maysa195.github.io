@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex1</title>
+  </head>
+  <body>
+    <strong id="retorno"></strong>
+    <script>
+      var endereco = {
+        rua: "Rua dos pinheiros",
+        numero: 1293,
+        bairros: "centro",
+        cidade: "São Paulo",
+        uf: "sp",
+      };
+      document.getElementById("retorno").innerHTML =
+        "O usuário mora em " +
+        endereco.rua +
+        " / " +
+        endereco.uf +
+        ", no bairro " +
+        endereco.bairros +
+        ", na rua " +
+        endereco.rua +
+        " com N " +
+        endereco.numero;
+    </script>
+  </body>
+</html>
