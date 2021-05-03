@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Funções</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+    <link rel="stylesheet" href="../../estilo.css" />
+    <title>Programação cliente web </title>
+  </head>
+  <body>
+    <header>
+      <p> Maysa Aquino</p>
+      <a href="index.html"
+        >Home</a
+      >
+    </header>
+<script>
+$(function(){
+    $("#execut").click(function(){
+
+        let a = $("#num").val();
+        if(a == '')
+        {
+            alert("Insira um valor válido.");
+        }
+
+        else{
+
+            let num = a.split(",");
+            let tam = a.length;
+            if(num[tam-1] == "")
+            {
+                num.pop();
+            }
+            $("#result").html("Até " + a +
+             " números,<br> a sequência de Fibonacci é: " +  fibonacci(a) + ".");
+        }
+        
+    })
+
+    function fibonacci (num) 
+    {
+        let vet = [];
+        vet.push(0);
+        let x = 0;
+        let y = 1;
+        let sla = 1;
+        for (let i=0; i<num; i++) 
+        {
+            vet.push(sla);
+            sla = x + y;
+            x = y;
+            y = sla;
+        }
+        return vet.join(",");
+    }
+
+$("#limpar").click(function(){
+        $("#result").text("");
+        $("#num").val("");
+    })
+})
+
+</script>
+
+<section>
+    <div id="page-landing">
+        <div id="container">
+          <h1>Insira um número.</h1>
+          <div id="materias">
+            <br>
+            <input id="num">
+            <button id="execut">Executar</button>
+            <button id="limpar" class="btn">Limpar</button> <br><br>
+            <p id="result" style="font-size: 20px;"></p>
+</div>
+</div>
+</div>
+</section>
+
+
+</body>
+<br><br>
+<a href="../java3.html"  id="voltar">Voltar</a>
+</html>

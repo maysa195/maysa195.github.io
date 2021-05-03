@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Funções</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+    <link rel="stylesheet" href="../../estilo.css" />
+    <title>Programação cliente web </title>
+  </head>
+  <body>
+    <header>
+      <p> Maysa Aquino</p>
+      <a href="index.html"
+        >Home</a
+      >
+    </header>
+<script>
+    $(function(){
+	$("#executa").click(function(){
+
+		let a = $("#num").val();
+		if( a == '')
+		{
+			alert("Insira um valor válido");
+		}
+
+		else{
+			let num = a.split(",");
+			console.log(num);
+			
+			let min = Math.min(...num);
+			$("#result").html("Valor mínimo: "+ min); 
+			let max = Math.max(...num);
+			$("#resulta").html("Valor máximo: "+ max); 
+			
+			let unique = unic(num); 
+			$("#resultad").html("Array sem repetições: "+ unique); 
+
+			let sn = sortnum(num);
+			$("#resultado").html("Array ordenado: "+ sn); 
+
+}
+	
+	 function sortnum (st)
+    {
+        return st.sort().join(",");
+    }
+
+	function unic (u)
+    {
+        let unico = [...new Set(u)];
+        return unico.join(",");
+    }
+
+   
+})
+$("#limpar").click(function(){
+        $("#num").val("");
+        $("#result").text("");
+        $("#resulta").text("");
+        $("#resultad").text("");
+        $("#resultado").text("");
+    })
+	
+});
+
+</script>
+
+<section>
+    <div id="page-landing">
+        <div id="container">
+          <h1>Digite o array entre vírgulas, por obséquio.</h1>
+          <div id="materias">
+            <br>
+	<input id="num">
+	<button id="executa">Executar</button>
+	<button id="limpar" class="btn">Limpar</button> <br><br>
+	<p id="result" style="font-size: 20px;"></p><br>
+	<p id="resulta" style="font-size:20px;"></p><br>
+	<p id="resultad" style="font-size:20px;"></p><br>
+	<p id="resultado" style="font-size:20px;"></p><br>
+</div>
+</div>
+</div>
+</section>
+
+
+</body>
+<br><br>
+<a href="../java3.html"  id="voltar">Voltar</a>
+</html>
