@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Funções</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+    <link rel="stylesheet" href="../../estilo.css" />
+    <title>Programação cliente web </title>
+  </head>
+  <body>
+    <header>
+      <p> Maysa Aquino</p>
+      <a href="index.html"
+        >Home</a
+      >
+    </header>
+ 
+
+<script>
+$(function(){
+	$("#executa").click(function(){
+		let t = $("#t").val();
+		let n = $("#n").val();	
+		n = parseInt(n);
+		var val = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+       	let pa = t.split('');
+       	let tam = t.length;
+       	let tama = val.length;
+       	let i = 0;
+       	let x = 0;
+       	let a;
+       	let aux;
+
+       	while(x<tam)
+       	{
+       		aux = pa[x];
+       		while(i<tama)
+       		{
+       			if(val[i] == aux)
+       			{
+       				if((i+n)>tama)
+       				{
+       					a = i + n - tama;
+       					pa[x] = val[a];
+       				}
+       				else if((i+n) == tama)
+       				{
+       					pa[x] = val[0];
+       				}
+       				else{
+       					pa[x] = val[i+n];
+       				}
+       			}
+       			i++;
+       		}
+       		i = 0;
+       		x++;
+       	}	
+       	ps = pa.join('');
+       	$("#result").html("Resultado: " + ps);
+
+	})
+	$("#limpar").click(function(){
+        $("#n").val("");
+        $("#t").val("");
+        $("#result").text("");
+    })
+})
+
+
+</script>
+<section>
+    <div id="page-landing">
+        <div id="container">
+          <h1>Insira os números da operação.</h1>
+          <div id="materias">
+            <img src="crip.png" style= "height: 170px; width: 550px;"> 
+            <input id="t" placeholder="Texto">
+            <input id="n" placeholder="Número ">
+            <button id="executa">Executar</button>
+            <button id="limpar" class="btn">Limpar</button> <br><br>
+            <h3 id="result"></h3>
+	
+            </div></div>
+</div>
+</div>
+</div>
+</section>
+
+
+</body>
+<br><br>
+<a href="../java3.html"  id="voltar">Voltar</a>
+</html>

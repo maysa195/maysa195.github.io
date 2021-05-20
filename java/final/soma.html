@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Funções</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+    <link rel="stylesheet" href="../../estilo.css" />
+    <title>Programação cliente web </title>
+  </head>
+  <body>
+    <header>
+      <p> Maysa Aquino</p>
+      <a href="index.html"
+        >Home</a
+      >
+    </header>
+ 
+
+<script>
+$(function(){
+	$("#executa").click(function(){
+
+		let n= $("#n").val();
+		let nu = $("#nu").val();
+		var op = $("#a").val();
+
+		if(n == '' || nu == '')
+		{
+			$("#resultado").html("Insira um valor válido."); 
+		}
+		else{
+			n = parseInt(n);
+			nu = parseInt(nu);
+
+			let cal = 0;
+			if(op == '1')
+			{
+				cal = n+nu;
+				$("#result").html(n +" + " + nu + " = " + cal + "."); 
+			}
+			if(op == '2')
+			{
+				cal = n-nu;
+				$("#result").html( n +" - " + nu + " = " + cal + "."); 
+			}
+			if(op == '3')
+			{
+				cal = n*nu;
+				$("#result").html( n +" * " + nu + " = " + cal) + "."; 
+			}
+			else if(op == '4')
+			{
+				cal = n/nu;
+				$("#result").html( n +"/" + nu + " = " + cal + "."); 
+			}
+		}
+	})
+
+	$("#limpar").click(function(){
+        $("#n").val("");
+        $("#nu").val("");
+        $("#result").text("");
+    })
+})
+</script>
+
+<section>
+    <div id="page-landing">
+        <div id="container">
+          <h1>Insira os números da operação.</h1>
+          <div id="materias">
+            <br>
+            <input placeholder="Número 1" id="n" type="number">
+            <input placeholder="Número 2"  id="nu" type="number">
+            <select placeholder="Operação"  id="a" style="width: 300px; height: 26px;">
+                <option value="1"> Soma </option>
+                <option value="2"> Subtração</option>
+                <option value="3"> Multiplicação</option>
+                <option value="4"> Divisão</option>
+            </select>
+            <button id="executa">Executar</button>
+            <button id="limpar" class="btn">Limpar</button> <br><br>
+            <h3 id="result"></h3>
+	
+            </div></div>
+</div>
+</div>
+</div>
+</section>
+
+
+</body>
+<br><br>
+<a href="../java3.html"  id="voltar">Voltar</a>
+</html>
